@@ -1,4 +1,4 @@
-Repository for ICLR submission "ConforFormer"
+Repository for "ConforFormer"
 =============================================
 
 ## Navigation
@@ -19,4 +19,5 @@ For model parameters please visit [the HuggingFace repository](https://huggingfa
  - [OpenBabel](https://openbabel.org/index.html): For the generation of the contrastive benchmark or Filtering of OpenMolecules
 
 ## Liscensing
- The origional contributions to this work are lesencsed under MIT. For contact please email conforformerreview@gmail.com
+
+ The origional contributions to this work are lesencsed under MIT. For contact please email e.a.pidko@tudelft.nl
