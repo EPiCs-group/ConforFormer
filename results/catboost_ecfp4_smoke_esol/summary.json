@@ -1,0 +1,40 @@
+{
+  "config": {
+    "data_root": "data_downloads/unimol/molecular_property_prediction",
+    "tasks": [
+      "esol"
+    ],
+    "radius": 2,
+    "fp_bits": 1024,
+    "use_chirality": false,
+    "iterations": 200,
+    "depth": 4,
+    "learning_rate": 0.05,
+    "l2_leaf_reg": 3.0,
+    "random_strength": 1.0,
+    "bagging_temperature": 0.0,
+    "early_stopping_rounds": 50,
+    "seed": 42,
+    "threads": 8
+  },
+  "elapsed_sec": 0.27,
+  "summary": [
+    {
+      "task": "esol",
+      "task_type": "regression",
+      "metric": "rmse",
+      "fingerprint": "ECFP4_1024",
+      "radius": 2,
+      "fp_bits": 1024,
+      "use_chirality": false,
+      "n_targets": 1,
+      "n_train": 902,
+      "n_valid": 113,
+      "n_test": 113,
+      "n_feature_failures": 0,
+      "valid": 1.704814014265019,
+      "test": 1.6611691399759654,
+      "elapsed_sec": 0.27
+    }
+  ]
+}

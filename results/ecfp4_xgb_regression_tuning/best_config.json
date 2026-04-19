@@ -1,0 +1,12 @@
+{
+  "config_id": "x07",
+  "n_estimators": 700,
+  "max_depth": 8,
+  "learning_rate": 0.05,
+  "min_child_weight": 10.0,
+  "subsample": 0.75,
+  "colsample_bytree": 0.65,
+  "reg_lambda": 3.0,
+  "reg_alpha": 0.0,
+  "gamma": 0.0
+}

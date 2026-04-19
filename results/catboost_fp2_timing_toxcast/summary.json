@@ -1,0 +1,36 @@
+{
+  "config": {
+    "data_root": "data_downloads/unimol/molecular_property_prediction",
+    "tasks": [
+      "toxcast"
+    ],
+    "feature_mode": "tanimoto",
+    "fp_bits": 1024,
+    "n_anchors": 64,
+    "iterations": 10,
+    "depth": 4,
+    "learning_rate": 0.1,
+    "l2_leaf_reg": 3.0,
+    "early_stopping_rounds": 100,
+    "seed": 42,
+    "threads": 8
+  },
+  "elapsed_sec": 10.226,
+  "summary": [
+    {
+      "task": "toxcast",
+      "task_type": "classification",
+      "metric": "auc",
+      "feature_mode": "tanimoto",
+      "n_targets": 617,
+      "n_train": 6860,
+      "n_valid": 858,
+      "n_test": 858,
+      "n_feature_failures": 0,
+      "n_anchors": 64,
+      "valid": 0.6302261594463264,
+      "test": 0.5634649576381028,
+      "elapsed_sec": 10.226
+    }
+  ]
+}

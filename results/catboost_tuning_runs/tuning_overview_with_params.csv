@@ -1,0 +1,4 @@
+config_id,feature_mode,n_anchors,iterations,depth,learning_rate,l2_leaf_reg,threads,seed,num_tasks,within_range_count,mean_normalized_score,mean_norm_classification,mean_norm_regression
+c2,tanimoto,128,100,6,0.08,4.0,8,42,14,5,-0.17441000321733238,-0.18704124476126852,-0.15756834782541754
+c3,tanimoto,96,70,5,0.09,3.5,8,42,14,6,-0.22738250525995043,-0.20737826637884424,-0.25405482376809196
+c1,tanimoto,64,50,4,0.1,3.0,8,42,14,4,-0.29243684221568195,-0.29006138653760866,-0.295604116453113

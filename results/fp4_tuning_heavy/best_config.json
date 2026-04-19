@@ -1,0 +1,8 @@
+{
+  "config_id": "t10",
+  "n_anchors": 128,
+  "iterations": 130,
+  "depth": 5,
+  "learning_rate": 0.06,
+  "l2_leaf_reg": 6.0
+}

@@ -1,0 +1,49 @@
+model,setting,benchmark,roc_auc,sd
+Uni-Mol replicate,Unfrozen,ESOL,0.83,0.03
+Uni-Mol replicate,Unfrozen,FreeSolv,1.80,0.11
+Uni-Mol replicate,Unfrozen,Lipo,0.608,0.009
+Uni-Mol replicate,Unfrozen,QM7,58.8,3.0
+Uni-Mol replicate,Unfrozen,QM8,0.0160,0.0001
+Uni-Mol replicate,Unfrozen,QM9,0.00520,0.00000
+ConforFormer--OMol,Unfrozen,ESOL,0.91,0.02
+ConforFormer--OMol,Unfrozen,FreeSolv,1.99,0.05
+ConforFormer--OMol,Unfrozen,Lipo,0.642,0.011
+ConforFormer--OMol,Unfrozen,QM7,53.8,1.8
+ConforFormer--OMol,Unfrozen,QM8,0.0159,0.0000
+ConforFormer--OMol,Unfrozen,QM9,0.00542,0.00004
+"Uni-Mol, no pretrain",Unfrozen,ESOL,0.98,0.05
+"Uni-Mol, no pretrain",Unfrozen,FreeSolv,2.49,0.23
+"Uni-Mol, no pretrain",Unfrozen,Lipo,0.787,0.022
+"Uni-Mol, no pretrain",Unfrozen,QM7,83.6,15.6
+"Uni-Mol, no pretrain",Unfrozen,QM8,0.0186,0.0006
+"Uni-Mol, no pretrain",Unfrozen,QM9,0.00618,0.00007
+Uni-Mol replicate,Frozen,ESOL,1.15,0.03
+Uni-Mol replicate,Frozen,FreeSolv,2.64,0.06
+Uni-Mol replicate,Frozen,Lipo,0.916,0.004
+Uni-Mol replicate,Frozen,QM7,82.6,4.4
+Uni-Mol replicate,Frozen,QM8,0.0264,0.0005
+Uni-Mol replicate,Frozen,QM9,0.0184,0.0012
+"Uni-Mol, OMol data",Frozen,ESOL,1.18,0.01
+"Uni-Mol, OMol data",Frozen,FreeSolv,3.00,0.06
+"Uni-Mol, OMol data",Frozen,Lipo,0.949,0.006
+"Uni-Mol, OMol data",Frozen,QM7,89.9,5.7
+"Uni-Mol, OMol data",Frozen,QM8,0.0274,0.0002
+"Uni-Mol, OMol data",Frozen,QM9,0.0202,0.0003
+ConforFormer--UniMol,Frozen,ESOL,1.17,0.03
+ConforFormer--UniMol,Frozen,FreeSolv,3.38,0.05
+ConforFormer--UniMol,Frozen,Lipo,0.807,0.005
+ConforFormer--UniMol,Frozen,QM7,104.9,9.0
+ConforFormer--UniMol,Frozen,QM8,0.0223,0.0002
+ConforFormer--UniMol,Frozen,QM9,0.01258,0.00017
+ConforFormer--OMol,Frozen,ESOL,1.12,0.02
+ConforFormer--OMol,Frozen,FreeSolv,3.53,0.07
+ConforFormer--OMol,Frozen,Lipo,0.752,0.007
+ConforFormer--OMol,Frozen,QM7,99.9,11.2
+ConforFormer--OMol,Frozen,QM8,0.0219,0.0002
+ConforFormer--OMol,Frozen,QM9,0.01172,0.00031
+XGBoost ECFP4_1024 baseline,Tuned x07 (5 seeds),ESOL,1.562,0.019
+XGBoost ECFP4_1024 baseline,Tuned x07 (5 seeds),FreeSolv,3.967,0.024
+XGBoost ECFP4_1024 baseline,Tuned x07 (5 seeds),Lipo,0.864,0.005
+XGBoost ECFP4_1024 baseline,Tuned x07 (5 seeds),QM7,155.502,3.324
+XGBoost ECFP4_1024 baseline,Tuned x07 (5 seeds),QM8,0.02341,0.00005
+XGBoost ECFP4_1024 baseline,Tuned x07 (5 seeds),QM9,0.01258,0.00003

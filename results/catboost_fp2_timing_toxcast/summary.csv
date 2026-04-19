@@ -1,0 +1,2 @@
+task,task_type,metric,feature_mode,n_targets,n_train,n_valid,n_test,n_feature_failures,n_anchors,valid,test,elapsed_sec
+toxcast,classification,auc,tanimoto,617,6860,858,858,0,64,0.6302261594463264,0.5634649576381028,10.226

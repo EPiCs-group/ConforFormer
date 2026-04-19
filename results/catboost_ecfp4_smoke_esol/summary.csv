@@ -1,0 +1,2 @@
+task,task_type,metric,fingerprint,radius,fp_bits,use_chirality,n_targets,n_train,n_valid,n_test,n_feature_failures,valid,test,elapsed_sec
+esol,regression,rmse,ECFP4_1024,2,1024,False,1,902,113,113,0,1.704814014265019,1.6611691399759654,0.27

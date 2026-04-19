@@ -1,0 +1,9 @@
+{
+  "config_id": "c06",
+  "iterations": 700,
+  "depth": 8,
+  "learning_rate": 0.04,
+  "l2_leaf_reg": 5.0,
+  "random_strength": 1.0,
+  "bagging_temperature": 0.0
+}
