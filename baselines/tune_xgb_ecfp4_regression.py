@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""ECFP4_1024 XGBoost hyperparameter tuning + 5-seed repeat evaluation on regression tasks."""
+"""XGBoost hyperparameter tuning + repeat evaluation on regression tasks."""
 
 from __future__ import annotations
 
@@ -47,15 +47,37 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         default=Path("results/ecfp4_xgb_regression_tuning"),
     )
+    p.add_argument(
+        "--radius",
+        type=int,
+        default=2,
+        help="Morgan fingerprint radius; radius=2 corresponds to ECFP4",
+    )
+    p.add_argument(
+        "--fp-bits",
+        type=int,
+        default=1024,
+        help="Bit-vector width for the Morgan fingerprint",
+    )
     p.add_argument("--threads", type=int, default=8)
     p.add_argument("--repeats", type=int, default=5)
     p.add_argument("--base-seed", type=int, default=42)
+    p.add_argument(
+        "--config-ids",
+        type=str,
+        default="",
+        help="Optional comma-separated subset of config IDs to evaluate",
+    )
     p.add_argument(
         "--regression-ranges",
         type=Path,
         default=REFERENCE_DIR / "regression_literature_range.csv",
     )
     return p.parse_args()
+
+
+def fingerprint_name(radius: int, fp_bits: int) -> str:
+    return f"ECFP{radius * 2}_{fp_bits}"
 
 
 def get_config_space() -> list[dict[str, float | int | str]]:
@@ -87,12 +109,14 @@ def make_base_args(
     threads: int,
     seed: int,
     config: dict[str, float | int | str],
+    radius: int,
+    fp_bits: int,
 ) -> Namespace:
     return Namespace(
         data_root=data_root,
         tasks=",".join(REGRESSION_TASKS),
-        radius=2,
-        fp_bits=1024,
+        radius=radius,
+        fp_bits=fp_bits,
         use_chirality=False,
         n_estimators=int(config["n_estimators"]),
         max_depth=int(config["max_depth"]),
@@ -140,8 +164,10 @@ def run_config(
     output_dir: Path,
     threads: int,
     lit_ranges: dict[str, tuple[float, float]],
+    radius: int,
+    fp_bits: int,
 ) -> tuple[list[dict[str, object]], list[dict[str, object]], dict[str, float | int]]:
-    args = make_base_args(data_root, output_dir, threads, seed, config)
+    args = make_base_args(data_root, output_dir, threads, seed, config, radius, fp_bits)
     output_dir.mkdir(parents=True, exist_ok=True)
 
     print(f"\n[run] {config['config_id']} seed={seed} -> {output_dir}", flush=True)
@@ -234,11 +260,17 @@ def aggregate_repeats(repeat_rows: list[dict[str, object]], out_dir: Path) -> li
 def main() -> None:
     args = parse_args()
     lit_ranges = load_literature_ranges(args.regression_ranges)
+    fp_name = fingerprint_name(args.radius, args.fp_bits)
 
     out_root = args.output_root
     out_root.mkdir(parents=True, exist_ok=True)
 
     configs = get_config_space()
+    if args.config_ids:
+        wanted = {item.strip() for item in args.config_ids.split(",") if item.strip()}
+        configs = [cfg for cfg in configs if str(cfg["config_id"]) in wanted]
+        if not configs:
+            raise ValueError(f"No configs matched --config-ids={args.config_ids!r}")
     write_csv(out_root / "tuning_configs.csv", configs)
 
     tuning_overview: list[dict[str, object]] = []
@@ -255,10 +287,12 @@ def main() -> None:
             output_dir=cfg_out,
             threads=args.threads,
             lit_ranges=lit_ranges,
+            radius=args.radius,
+            fp_bits=args.fp_bits,
         )
         ov = {
             "config_id": cfg_id,
-            "fingerprint": "ECFP4_1024",
+            "fingerprint": fp_name,
             "model": "XGBoost",
             "seed": args.base_seed,
             "n_estimators": cfg["n_estimators"],
@@ -313,6 +347,8 @@ def main() -> None:
             output_dir=run_dir,
             threads=args.threads,
             lit_ranges=lit_ranges,
+            radius=args.radius,
+            fp_bits=args.fp_bits,
         )
         repeat_rows.extend(summary_rows)
         repeat_overview.append(
@@ -330,6 +366,7 @@ def main() -> None:
 
     print("\n[done] tuning + repeats complete", flush=True)
     print(f"Output root: {out_root}", flush=True)
+    print(f"Fingerprint: {fp_name}", flush=True)
     print("Top tuning rows:", flush=True)
     for row in tuning_overview[:5]:
         print(row, flush=True)
