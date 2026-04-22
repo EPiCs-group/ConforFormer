@@ -254,14 +254,11 @@ example_scripts/baselines/run_xgb_ecfp_reviewer_variants.sh [DATA_ROOT] [OUT_ROO
 
 Defaults:
 
-- `DATA_ROOT`: `../conf_paper_code/data_downloads/unimol/molecular_property_prediction`
+- `DATA_ROOT`: `data_downloads/unimol/molecular_property_prediction`
 - `OUT_ROOT`: `results/reviewer_fingerprint_checks`
 - `THREADS`: `8`
 - `REPEATS`: `5`
 - `BASE_SEED`: `42`
-
-That `DATA_ROOT` default matches the original local workspace layout. In a
-fresh clone, it is usually clearer to pass `DATA_ROOT` explicitly.
 
 Variants covered by the wrapper:
 

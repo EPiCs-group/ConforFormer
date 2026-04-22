@@ -6,8 +6,7 @@ cd "$ROOT_DIR"
 
 export UV_CACHE_DIR="${UV_CACHE_DIR:-$ROOT_DIR/.uv-cache}"
 
-CODE_DIR="$(dirname "$ROOT_DIR")"
-DEFAULT_DATA_ROOT="$CODE_DIR/conf_paper_code/data_downloads/unimol/molecular_property_prediction"
+DEFAULT_DATA_ROOT="$ROOT_DIR/data_downloads/unimol/molecular_property_prediction"
 
 DATA_ROOT="${1:-$DEFAULT_DATA_ROOT}"
 OUT_ROOT="${2:-$ROOT_DIR/results/reviewer_fingerprint_checks}"
