@@ -67,7 +67,7 @@ current$plot_model[current$model == "Uni-Mol replicate" & current$setting == "Fr
 current$plot_model[current$model == "ConforFormer--UniMol" & current$setting == "Frozen"] <- "ConforFormer-UniMol"
 current$plot_model[current$model == "ConforFormer--OMol" & current$setting == "Frozen"] <- "ConforFormer-OMol"
 current$plot_model[current$model == "CatBoost FP4 baseline"] <- "CatBoost FP4 baseline"
-current$plot_model[current$model == "XGBoost ECFP4_1024 baseline"] <- "XGBoost ECFP4_1024 baseline"
+current$plot_model[current$model == "XGBoost ECFP4 (1024-bit) baseline"] <- "XGBoost ECFP4 (1024-bit) baseline"
 current <- current[!is.na(current$plot_model), ]
 
 model_levels <- c(
@@ -75,7 +75,7 @@ model_levels <- c(
   "ConforFormer-UniMol",
   "ConforFormer-OMol",
   "CatBoost FP4 baseline",
-  "XGBoost ECFP4_1024 baseline"
+  "XGBoost ECFP4 (1024-bit) baseline"
 )
 current$plot_model <- factor(current$plot_model, levels = model_levels)
 current <- current[order(current$plot_model, current$bench_idx), ]
@@ -129,7 +129,7 @@ plot_obj <- ggplot() +
       "ConforFormer-UniMol" = "#D95F02",
       "ConforFormer-OMol" = "#7570B3",
       "CatBoost FP4 baseline" = "#4D4D4D",
-      "XGBoost ECFP4_1024 baseline" = "#355C7D"
+      "XGBoost ECFP4 (1024-bit) baseline" = "#355C7D"
     )
   ) +
   scale_linetype_manual(
@@ -139,7 +139,7 @@ plot_obj <- ggplot() +
       "ConforFormer-UniMol" = "solid",
       "ConforFormer-OMol" = "solid",
       "CatBoost FP4 baseline" = "dotdash",
-      "XGBoost ECFP4_1024 baseline" = "dashed"
+      "XGBoost ECFP4 (1024-bit) baseline" = "dashed"
     )
   ) +
   labs(

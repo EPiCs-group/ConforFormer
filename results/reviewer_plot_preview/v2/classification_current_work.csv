@@ -55,11 +55,11 @@ ConforFormer--OMol,Frozen,ToxCast,0.638,0.003
 ConforFormer--OMol,Frozen,SIDER,0.640,0.006
 ConforFormer--OMol,Frozen,HIV,0.751,0.004
 ConforFormer--OMol,Frozen,MUV,0.774,0.006
-XGBoost ECFP4_1024 baseline,Tuned x03 (5 seeds),BBBP,0.682,0.008
-XGBoost ECFP4_1024 baseline,Tuned x03 (5 seeds),BACE,0.805,0.035
-XGBoost ECFP4_1024 baseline,Tuned x03 (5 seeds),ClinTox,0.839,0.021
-XGBoost ECFP4_1024 baseline,Tuned x03 (5 seeds),Tox21,0.724,0.004
-XGBoost ECFP4_1024 baseline,Tuned x03 (5 seeds),ToxCast,0.589,0.002
-XGBoost ECFP4_1024 baseline,Tuned x03 (5 seeds),SIDER,0.618,0.011
-XGBoost ECFP4_1024 baseline,Tuned x03 (5 seeds),HIV,0.762,0.014
-XGBoost ECFP4_1024 baseline,Tuned x03 (5 seeds),MUV,0.774,0.026
+XGBoost ECFP4 (1024-bit) baseline,Tuned x03 (5 seeds),BBBP,0.682,0.008
+XGBoost ECFP4 (1024-bit) baseline,Tuned x03 (5 seeds),BACE,0.805,0.035
+XGBoost ECFP4 (1024-bit) baseline,Tuned x03 (5 seeds),ClinTox,0.839,0.021
+XGBoost ECFP4 (1024-bit) baseline,Tuned x03 (5 seeds),Tox21,0.724,0.004
+XGBoost ECFP4 (1024-bit) baseline,Tuned x03 (5 seeds),ToxCast,0.589,0.002
+XGBoost ECFP4 (1024-bit) baseline,Tuned x03 (5 seeds),SIDER,0.618,0.011
+XGBoost ECFP4 (1024-bit) baseline,Tuned x03 (5 seeds),HIV,0.762,0.014
+XGBoost ECFP4 (1024-bit) baseline,Tuned x03 (5 seeds),MUV,0.774,0.026
