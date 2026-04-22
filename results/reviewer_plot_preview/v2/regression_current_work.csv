@@ -41,9 +41,9 @@ ConforFormer--OMol,Frozen,Lipo,0.752,0.007
 ConforFormer--OMol,Frozen,QM7,99.9,11.2
 ConforFormer--OMol,Frozen,QM8,0.0219,0.0002
 ConforFormer--OMol,Frozen,QM9,0.01172,0.00031
-XGBoost ECFP4_1024 baseline,Tuned x07 (5 seeds),ESOL,1.562,0.019
-XGBoost ECFP4_1024 baseline,Tuned x07 (5 seeds),FreeSolv,3.967,0.024
-XGBoost ECFP4_1024 baseline,Tuned x07 (5 seeds),Lipo,0.864,0.005
-XGBoost ECFP4_1024 baseline,Tuned x07 (5 seeds),QM7,155.502,3.324
-XGBoost ECFP4_1024 baseline,Tuned x07 (5 seeds),QM8,0.02341,0.00005
-XGBoost ECFP4_1024 baseline,Tuned x07 (5 seeds),QM9,0.01258,0.00003
+XGBoost ECFP4 (1024-bit) baseline,Tuned x07 (5 seeds),ESOL,1.562,0.019
+XGBoost ECFP4 (1024-bit) baseline,Tuned x07 (5 seeds),FreeSolv,3.967,0.024
+XGBoost ECFP4 (1024-bit) baseline,Tuned x07 (5 seeds),Lipo,0.864,0.005
+XGBoost ECFP4 (1024-bit) baseline,Tuned x07 (5 seeds),QM7,155.502,3.324
+XGBoost ECFP4 (1024-bit) baseline,Tuned x07 (5 seeds),QM8,0.02341,0.00005
+XGBoost ECFP4 (1024-bit) baseline,Tuned x07 (5 seeds),QM9,0.01258,0.00003

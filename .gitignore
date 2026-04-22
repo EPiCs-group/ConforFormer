@@ -131,3 +131,12 @@ dmypy.json
 # Local large-data downloads
 /data_downloads/
 .DS_Store
+
+# Reviewer fingerprint screening / tuning outputs
+/results/reviewer_fingerprint_checks/
+/results/reviewer_fingerprint_screen/
+/results/reviewer_fingerprint_tuning/
+
+# Generated preview figures for reviewer benchmark plots
+/results/reviewer_plot_preview/v2/*.pdf
+/results/reviewer_plot_preview/v2/*.png
