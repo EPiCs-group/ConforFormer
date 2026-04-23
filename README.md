@@ -41,6 +41,17 @@ Install the baseline dependencies with `uv`:
 uv sync
 ```
 
+All baseline scripts expect a Uni-Mol molecular-property data root with one
+folder per task, each containing `train.lmdb`, `valid.lmdb`, and `test.lmdb`.
+By default the scripts look under:
+
+```text
+data_downloads/unimol/molecular_property_prediction/
+```
+
+If your LMDB files live elsewhere, pass that path with `--data-root` or as the
+first positional argument to the wrapper scripts below.
+
 Run the OpenBabel CatBoost benchmark:
 
 ```bash
@@ -63,9 +74,23 @@ uv run python -m baselines.xgb_ecfp_baseline \
   --output-dir results/xgb_ecfp4_1024
 ```
 
-Wrapper scripts are available in [`example_scripts/baselines/`](./example_scripts/baselines/).
-See [`baselines/README.md`](./baselines/README.md) for tuning workflows,
-reference configs, and output locations.
+Wrapper scripts are available in [`example_scripts/baselines/`](./example_scripts/baselines/):
+
+- [`run_catboost_fp2_benchmark.sh`](./example_scripts/baselines/run_catboost_fp2_benchmark.sh)
+  runs a single CatBoost/OpenBabel benchmark
+- [`run_xgb_ecfp4_benchmark.sh`](./example_scripts/baselines/run_xgb_ecfp4_benchmark.sh)
+  runs the paper `ECFP4_1024` XGBoost benchmark
+- [`run_xgb_ecfp4_reviewer_tuning.sh`](./example_scripts/baselines/run_xgb_ecfp4_reviewer_tuning.sh)
+  performs the classification and regression tuning harness used for the paper
+- [`run_xgb_ecfp_reviewer_variants.sh`](./example_scripts/baselines/run_xgb_ecfp_reviewer_variants.sh)
+  reruns the best XGBoost configs on alternative Morgan fingerprints such as
+  `ECFP4_2048` and `ECFP6_16384`
+
+The benchmark scripts write `summary.csv`, `per_target.csv`, and `summary.json`
+to the selected output directory. The tuning harnesses additionally emit
+`tuning_overview.csv`, `best_config.json`, and `best_repeats/` summaries.
+See [`baselines/README.md`](./baselines/README.md) for wrapper arguments,
+direct module invocations, reference configs, and output locations.
 
 ### ConforFormer and Uni-Mol workflows
 
